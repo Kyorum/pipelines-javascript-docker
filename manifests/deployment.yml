@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kyorumpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyorumpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: kyorumpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: kyorumpipelinesjavascriptdocker 
+          image: clusterfile.azurecr.io/kyorumpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
